@@ -8,9 +8,9 @@ public class UserUpdateView extends InputOutputView {
         String title = "Enter user's ID: ";
         String id = inputReader.readString(title);
 
-        title = "Enter new phone in format xxx xxx-xxxx: ";
-        String phone = inputReader.readString(title);
+        title = "Enter new user name: ";
+        String user_name = inputReader.readString(title);
 
-        return new String[]{id, phone};
+        return new String[]{id, user_name};
     }
 }

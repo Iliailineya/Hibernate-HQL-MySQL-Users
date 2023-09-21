@@ -1,7 +1,7 @@
 package org.example.app.repositories;
 
-import org.example.app.entities.User1;
-import org.example.app.utils.Constants;
+import org.example.app.entities.User;
+import org.example.app.constants.Constants;
 import org.example.app.utils.HibernateUtil;
 import org.example.app.utils.IdChecker;
 import org.hibernate.Session;
@@ -10,18 +10,18 @@ import org.hibernate.query.MutationQuery;
 
 public class UserDeleteRepository {
 
-    public String deleteUser(User1 user1) {
+    public String deleteUser(User user) {
         // Перевіряємо наявність id в БД.
         // ТАК - працюємо з даними.
         // НІ - повідомлення про відсутність id.
-        if (IdChecker.isIdExists(user1)) {
-            return deleteUserById(user1);
+        if (IdChecker.isIdExists(user)) {
+            return deleteUserById(user);
         } else {
             return Constants.ID_NO_EXISTS_MSG;
         }
     }
 
-    public String deleteUserById(User1 user1) {
+    public String deleteUserById(User user) {
 
         Transaction transaction = null;
 
@@ -30,12 +30,12 @@ public class UserDeleteRepository {
             transaction = session.beginTransaction();
 
             // Видалення об'єкту
-            user1 = session.get(User1.class, user1.getId());
+            user = session.get(User.class, user.getId());
 
-            if (user1 != null) {
-                String hql = "DELETE FROM User1 WHERE id = :id";
+            if (user != null) {
+                String hql = "DELETE FROM User WHERE id = :id";
                 MutationQuery query = session.createMutationQuery(hql);
-                query.setParameter("id", user1.getId());
+                query.setParameter("id", user.getId());
                 query.executeUpdate();
             }
             // Транзакція виконується

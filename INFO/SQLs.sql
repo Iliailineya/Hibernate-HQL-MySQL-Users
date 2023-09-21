@@ -16,36 +16,23 @@ CREATE DATABASE demo_db;
 -- Можемо створити таблиці БД через візуальний інструмент, наприклад,
 -- MySQL Workbench.
 
-CREATE TABLE IF NOT EXISTS users1
+CREATE TABLE IF NOT EXISTS user
 ( id INTEGER NOT NULL AUTO_INCREMENT,
+  user_name VARCHAR(128) NOT NULL,
   first_name VARCHAR(128) NOT NULL,
   last_name VARCHAR(128) NOT NULL,
-  nickname VARCHAR(128) NOT NULL,
-  phone VARCHAR(56) NOT NULL,
   email VARCHAR(128) NOT NULL,
   PRIMARY KEY (id)
 );
 
+-- HQL
+INSERT INTO User (user_name, firstName, lastName email) VALUES (:user_name, :firstName, :lastName, :email)
 
 -- HQL
-INSERT INTO User1 (firstName, lastName, phone, email) VALUES (:firstName, :lastName, :phone, :email)
--- SQL
-INSERT INTO users1 (first_name, last_name, phone, email) VALUES (:first_name, :last_name, :phone, :email)
-
+FROM User
 
 -- HQL
-FROM User1
--- SQL
-SELECT * FROM users1
-
+UPDATE User SET user_name = :phone WHERE id = :id
 
 -- HQL
-UPDATE User1 SET phone = :phone WHERE id = :id
--- SQL
-UPDATE users1 SET phone = :phone WHERE id = :id
-
-
--- HQL
-DELETE FROM User1 WHERE id = :id
--- SQL
-DELETE FROM users1 WHERE id = :id;
+DELETE FROM User WHERE id = :id

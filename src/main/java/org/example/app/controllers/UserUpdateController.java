@@ -1,6 +1,6 @@
 package org.example.app.controllers;
 
-import org.example.app.services.UserUpdateService;
+import org.example.app.services.operations.UserUpdateService;
 import org.example.app.utils.AppStarter;
 import org.example.app.views.user_view.UserUpdateView;
 

@@ -4,7 +4,7 @@ import org.example.app.views.view_util.InputOutputView;
 
 public class UserDeleteView extends InputOutputView {
     public String[] getData() {
-        String title = "Enter contact's ID: ";
+        String title = "Enter user's ID: ";
         String id = inputReader.readString(title);
         return new String[]{id};
     }

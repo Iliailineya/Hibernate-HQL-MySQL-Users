@@ -1,7 +1,8 @@
 package org.example.app.utils;
 
 import org.example.app.database.Credentials;
-import org.example.app.entities.User1;
+import org.example.app.entities.User;
+import org.example.app.constants.Constants;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -19,7 +20,7 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = getConfiguration();
-                configuration.addAnnotatedClass(User1.class);
+                configuration.addAnnotatedClass(User.class);
 
                 ServiceRegistry serviceRegistry =
                         new StandardServiceRegistryBuilder()

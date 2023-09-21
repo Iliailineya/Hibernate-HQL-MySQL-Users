@@ -1,6 +1,6 @@
 package org.example.app.controllers;
 
-import org.example.app.services.UserDeleteService;
+import org.example.app.services.operations.UserDeleteService;
 import org.example.app.utils.AppStarter;
 import org.example.app.views.user_view.UserDeleteView;
 

@@ -10,20 +10,8 @@ https://docs.jboss.org/hibernate/orm/6.2/userguide/html_single/Hibernate_User_Gu
 
 ------------------
 
-1) Визначаємо об'єкти (сутності) реального світу.
-На основі цих об'єктів сформуємо таблиці БД та
-моделі Java-класів
+На прикладі проекту Hibernate-HQL-MySQL-Contacts
 
-2) Складаємо SQL-запити SQLs.sql.
+розробити окремий проект Hibernate-HQL-MySQL-Users.
 
-3) Створюємо Maven-проект.
-В Advanced Settings можемо прописати org.example.app
-
-4) Додаємо залежності.
-
-5) Формуємо пакети, класи в org/example/app
-
-6) Можемо змінити .gitignore.
-
-7) Перевіряємо працездатність програми.
-
+User має: user_name, first_name, last_name, email.
